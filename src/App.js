@@ -13,6 +13,7 @@ import {
 import { NewArticle } from './components/NewArticle'
 import { UpdatePost } from './components/UpdatePost'
 import UpdateState from './context/posts/UpdateState'
+import { GlobalPosts } from './components/GlobalPosts'
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
 
               <Route exact path="/home">
                 <MainBrand />
-                <Posts />
+                <GlobalPosts />
               </Route>
 
               <Route exact path="/newarticle">
@@ -52,7 +53,7 @@ function App() {
               </Route>
 
               <Route exact path="/globalfeed">
-                <Posts />
+                <GlobalPosts />
               </Route>
 
               <Route exact path="/userfeed">
