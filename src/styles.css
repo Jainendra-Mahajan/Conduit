@@ -15,6 +15,9 @@
     font-weight: 500;
 
 }
+.bottom-border-class{
+  border-bottom:1px solid #5CB85C;
+}
 
 .functional-btn{
   padding: 0.5rem;

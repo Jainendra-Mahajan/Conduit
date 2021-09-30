@@ -24,7 +24,7 @@ const PostState = (props) =>{
 
     }
     
-    //get all Articles
+    //get all user written articles
     const getArticle = async()=>{
       //api call to backend
 
@@ -38,6 +38,20 @@ const PostState = (props) =>{
       const json = await response.json();
       setPosts(json);
     }
+
+    //get all global data
+
+    const globalData = async()=>{
+      const response = await fetch(`${host}/api/post/globaldata`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json' , 
+        },
+      });
+
+      const data = await response.json();
+      setPosts(data);
+     }
 
     //deleting the article 
     const deletePost = async(id) =>{
@@ -91,8 +105,10 @@ const PostState = (props) =>{
         }
     }
 
+     
+
     return(
-        <postContext.Provider value = {{posts , addPost , deletePost , editPost , getArticle}}>
+        <postContext.Provider value = {{posts , addPost , deletePost , editPost , globalData,  getArticle}}>
             {props.children}
         </postContext.Provider>
     )

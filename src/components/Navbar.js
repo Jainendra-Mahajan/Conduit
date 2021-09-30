@@ -15,7 +15,7 @@ const Navbar = () => {
                     
                     <div id="navbarSupportedContent">
 
-                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        { <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
@@ -27,10 +27,11 @@ const Navbar = () => {
                             </li>
 
                             <li className="nav-item">
-                            {localStorage.getItem('token') ? <Link className="nav-link" to="/signIn" onClick={handleClick}>Log Out</Link> : <Link className="nav-link" to="/signup">Sign Up</Link> }
+                             <Link className="nav-link" to={localStorage.getItem('token') ? "/signin" : "/signup"} onClick={handleClick}>{localStorage.getItem('token') ? "Logout" : "Sign Up" }</Link>
                             </li>
 
                         </ul>
+                        }
                     </div>
                 </div>
             </nav>

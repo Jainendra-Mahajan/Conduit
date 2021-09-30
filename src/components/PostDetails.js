@@ -45,7 +45,7 @@ export const PostDetails = (props) => {
                                         <div className="widget-49-meeting-info">
                                        
                                             <Link to="/#" className="widget-49-pro-title">{post.user}</Link>  
-                                            <span className="widget-49-meeting-time">(post.Date)</span>
+                                            <span className="widget-49-meeting-time">{post.Date}</span>
                                         </div>
                                             <button  className="functional-btn" onClick={() =>{deletePost(post._id)}}><i className="far fa-trash-alt" style={{paddingRight:"10px"}}></i>  Delete Post</button>
                                             <button className="functional-btn" onClick={handleUpdate}><i className="far fa-edit" style={{paddingRight:"10px"}}></i>Update Post</button>
