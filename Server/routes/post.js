@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const fetchUser = require('../Middleware/fetchuser');
 const Post = require('../Models/Post');
-const User = require('../Models/User')
 
 const { body, validationResult } = require('express-validator');
 
