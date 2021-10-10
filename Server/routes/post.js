@@ -3,6 +3,7 @@ const router = express.Router();
 const fetchUser = require('../Middleware/fetchuser');
 const Post = require('../Models/Post');
 
+
 const { body, validationResult } = require('express-validator');
 
 
@@ -12,8 +13,17 @@ const { body, validationResult } = require('express-validator');
 router.get('/getpost', fetchUser, async (req, res) => {
 
     try {
-        const userPost = await Post.find({user : req.user.id})
-        res.json(userPost);
+    
+        // const userPost = await Post.find({user : req.user.id})
+        // res.json(userPost);
+
+        Post.
+        find({user : req.user.id}).
+        populate("user" , "username").
+        exec(function(err, pst){
+            if(err) {res.writeHead(500, err.message)}
+            res.json(pst);
+        });
         
     } catch (error) {
         console.error(error.message);
@@ -21,6 +31,7 @@ router.get('/getpost', fetchUser, async (req, res) => {
     }
    
 });
+
 
 
 //route for adding the post by current user
@@ -60,8 +71,15 @@ router.post('/createpost', fetchUser, [
 router.get('/globaldata', async (req, res) => {
 
     try {
-        const allposts = await Post.find({});
-        res.json(allposts);
+        // const allposts = await Post.find({});
+        // res.json(allposts);
+        Post.
+        find({}).
+        populate("user" , "username").
+        exec(function(err, pst){
+            if(err) {res.writeHead(500, err.message)}
+            res.json(pst);
+        });
 
     } catch (error) {
         console.error(error.message);
@@ -129,4 +147,3 @@ router.delete('/deletepost/:id', fetchUser, async (req, res) => {
 
 
 module.exports = router;
-

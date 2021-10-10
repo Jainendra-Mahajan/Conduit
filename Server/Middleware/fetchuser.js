@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = "Thisissecret";
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const fetchUser = (req, res, next) => {
 
@@ -10,15 +10,13 @@ const fetchUser = (req, res, next) => {
     }
 
     try {
-        const data = jwt.verify(Token, JWT_SECRET);
+        const data = jwt.verify(Token,JWT_SECRET);
 
         req.user = data.user;
         next();
     } catch (error) {
         res.status(401).send({ error: "please authenticate using a valid token" })
     }
-
-
 }
 
 module.exports = fetchUser;

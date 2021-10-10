@@ -14,6 +14,7 @@ import { NewArticle } from './components/NewArticle'
 import { UpdatePost } from './components/UpdatePost'
 import UpdateState from './context/posts/UpdateState'
 import { GlobalPosts } from './components/GlobalPosts'
+import { ArticleDetails } from './components/ArticleDetails'
 
 
 function App() {
@@ -23,7 +24,6 @@ function App() {
         <Router>
           <div>
 
-            <Navbar />
 
             <Switch>
               <Route exact path="/">
@@ -32,31 +32,45 @@ function App() {
               </Route>
 
               <Route exact path="/home">
+              <Navbar />
                 <MainBrand />
                 <GlobalPosts />
               </Route>
 
               <Route exact path="/newarticle">
+              <Navbar />
                 <NewArticle />
               </Route>
 
               <Route exact path="/signin">
+                <Navbar/>
                 <SignIn />
               </Route>
 
               <Route exact path="/updatepost">
+              <Navbar />
                 <UpdatePost />
               </Route>
 
               <Route exact path="/signup">
+              <Navbar />
                 <SignUp />
               </Route>
 
               <Route exact path="/globalfeed">
+              <Navbar />
+                <MainBrand />
                 <GlobalPosts />
               </Route>
 
+              <Route exact path="/articledetails">
+              <Navbar />
+               <ArticleDetails/>
+              </Route>
+
               <Route exact path="/userfeed">
+              <Navbar />
+                <MainBrand />
                 <Posts />
               </Route>
 

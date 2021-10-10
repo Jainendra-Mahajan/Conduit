@@ -388,6 +388,7 @@ a{
 
 .post-details{
     color:  #B1BAC5;
+    font-size: 0.9rem;
 }
 .counter-btn {
 color: #fff;
@@ -400,7 +401,6 @@ background-color: #5CB85C;
 }
 .btn-readMore{
     color: #5CB85C;
-    text-transform: lowercase;
 }
 .btn-readMore:hover{
     color: #5CB85C;

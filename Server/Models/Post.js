@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
+
 const PostSchema = new Schema({
         user:{
                 type : mongoose.Schema.Types.ObjectId,
@@ -8,13 +9,17 @@ const PostSchema = new Schema({
         } , 
 
         Date: {
-                type: Date,
-                default: Date.now
+                type: String,
+                default: Date
         },
 
-        heading:  String,
+        heading: { 
+                type : String
+        },
 
-        description: String
+        description: {
+                type : String
+        } 
 });
 
 const Post = mongoose.model("post", PostSchema);

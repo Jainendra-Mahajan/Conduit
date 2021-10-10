@@ -7,9 +7,7 @@ var jwt = require('jsonwebtoken');
 var fetchUser = require('../Middleware/fetchuser');
 
 
-const JWT_SECRET = "Thisissecret";
-
-
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Endpoint for creating user
 router.post('/createuser' , 

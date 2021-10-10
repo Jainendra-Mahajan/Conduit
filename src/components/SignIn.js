@@ -20,7 +20,7 @@ const SignIn = () => {
         });
 
         const json = await response.json();
-        console.log(json);
+        
 
         if(json.success){
             //save the token to localstorage

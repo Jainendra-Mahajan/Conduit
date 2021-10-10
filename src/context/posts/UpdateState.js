@@ -9,6 +9,8 @@ const UpdateState = (props) => {
     const updateValue = (post)=>{
         setUpdate(post);
     }
+
+
                 return (
         <updateContext.Provider value={{update , updateValue}}>
             {props.children}

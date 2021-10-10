@@ -23,7 +23,7 @@ const PostState = (props) =>{
       setPosts(posts.concat(post));
 
     }
-    
+
     //get all user written articles
     const getArticle = async()=>{
       //api call to backend

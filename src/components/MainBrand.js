@@ -4,7 +4,6 @@ import '../styles.css'
 
 const MainBrand = () => {
 
-
     return (
         <div className="main-heading" style={{background:"#5CB85C"}}> 
             <section className="py-3 text-center container">

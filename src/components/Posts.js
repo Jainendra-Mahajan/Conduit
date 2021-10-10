@@ -35,7 +35,7 @@ const Posts = () => {
                 <ul className="post-nav-tag container ">
 
                     <li><Link to="/globalfeed" onClick = {handleClick}>Global Feed</Link> </li>
-                    <li><Link to="/userfeed" onClick = {handleArticles}> My Articles</Link></li>
+                    <li><Link to="/userfeed" onClick = {handleArticles} style={{borderBottom:"2px solid #5CB85C"}}> My Articles</Link></li>
                 </ul>
             </div>
             <div className="container">
@@ -44,7 +44,7 @@ const Posts = () => {
                 {posts.length === 0 && 'No articles available...'}
                 </div>
                 {posts.map((post) =>{
-                    return <PostDetails post = {post}/>
+                    return <PostDetails post = {post} key={post._id}/>
                 })}
 
             </div>
